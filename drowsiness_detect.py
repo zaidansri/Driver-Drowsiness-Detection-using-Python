@@ -1,7 +1,6 @@
 '''This script detects if a person is drowsy or not,using dlib and eye aspect ratio
 calculations. Uses webcam video feed as input.'''
 
-#Import necessary libraries
 from scipy.spatial import distance
 from imutils import face_utils
 import numpy as np
@@ -10,23 +9,22 @@ import pygame #For playing sound
 import dlib
 import cv2
 
-#Initialize Pygame and load music
 pygame.mixer.init()
 pygame.mixer.music.load('audio/alert.wav')
 
-#Minimum threshold of eye aspect ratio below which alarm is triggerd
+#Minimum threshold of eye aspect ratio
 EYE_ASPECT_RATIO_THRESHOLD = 0.3
 
-#Minimum consecutive frames for which eye ratio is below threshold for alarm to be triggered
+#Minimum consecutive frames
 EYE_ASPECT_RATIO_CONSEC_FRAMES = 50
 
-#COunts no. of consecutuve frames below threshold value
+#Counts no. of consecutuve frames below threshold value
 COUNTER = 0
 
 #Load face cascade which will be used to draw a rectangle around detected faces.
 face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
 
-#This function calculates and return eye aspect ratio
+#calculation of return eye aspect ratio
 def eye_aspect_ratio(eye):
     A = distance.euclidean(eye[1], eye[5])
     B = distance.euclidean(eye[2], eye[4])
