@@ -1,0 +1,18 @@
+IMPORTANT
+
+  Download `shape_predictor_68_face_landmarks.dat.bz2` from [Shape Predictor 68 features](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) 
+  Extract the file and save it in the project folder. It's a big file, so couldn't upload it in the repository.
+
+Requirements:
+        numpy==1.15.2
+	dlib==19.16.0
+	pygame==1.9.4
+	imutils==0.5.1
+	opencv_python==3.4.3.18
+	scipy==1.1.0
+
+### Drowsiness Detection
+Run script using:
+    python drowsiness_detect.py
+
+The algorithm for Eye Aspect Ratio was taken from pyimagesearch.com blog, by Adrian RoseBrock.
